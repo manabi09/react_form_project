@@ -3,6 +3,8 @@ const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const { PrismaClient } = require('@prisma/client');
+const { PrismaStudio } = require('@prisma/studio');
+const studio = new PrismaStudio();
 
 
 const app = express();
@@ -10,6 +12,7 @@ const prisma = new PrismaClient();
 
 app.use(cors());
 app.use(bodyParser.json());
+studio.start();
 
 app.get('/test', (req, res) => {
   res.send('API is working');
