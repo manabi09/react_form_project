@@ -16,6 +16,17 @@ app.get('/test', (req, res) => {
   res.send('API is working');
 });
 
+app.get("/test-db", async (req, res) => {
+  try {
+    const users = await prisma.user_reg.findMany(); // or whatever your model is called
+    res.json(users);
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("DB Error");
+  }
+});
+
+
 app.post('/register', async (req, res) => {
   const { name, contact, email, dob, address, password } = req.body;
 
