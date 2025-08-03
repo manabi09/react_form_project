@@ -13,7 +13,7 @@ function Login({ onLoginSuccess }) {
   const handleSubmit = async e => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:3001/login', inputs);
+      const res = await axios.post('https://backend-ias0.onrender.com/login', inputs);
       if (res.data.success) {
         const userName = res.data.name;
         // console.log('Logging in as:', userName); // debug

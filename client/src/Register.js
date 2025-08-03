@@ -19,7 +19,7 @@ function Register({ switchToLogin }) {
   const handleSubmit = async e => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:3001/register', inputs);
+      const res = await axios.post('https://backend-ias0.onrender.com/register', inputs);
       alert(res.data.message);
     } catch (err) {
       alert('Registration failed');
