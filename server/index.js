@@ -3,7 +3,7 @@ const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const { PrismaClient } = require('@prisma/client');
-const { PrismaStudio } = require('@prisma/studio');
+// const { PrismaStudio } = require('@prisma/studio');
 const studio = new PrismaStudio();
 
 
